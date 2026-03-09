@@ -22,7 +22,13 @@ const Index = () => {
       </AnimatePresence>
 
       {!loading && (
-        <main className="min-h-screen">
+        <main className="min-h-screen relative">
+          {/* Background image */}
+          <div
+            className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"
+            style={{ backgroundImage: `url(${bgLegal})` }}
+          />
+          <div className="fixed inset-0 z-0 bg-background/70" />
           <HeroSection onCtaClick={openModal} />
           <ProblemSection />
           <BenefitsSection />
