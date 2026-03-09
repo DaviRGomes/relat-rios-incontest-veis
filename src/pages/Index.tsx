@@ -6,6 +6,7 @@ import ProblemSection from "@/components/ProblemSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import PricingSection from "@/components/PricingSection";
 import CaptureModal from "@/components/CaptureModal";
+import bgLegal from "@/assets/bg-legal.jpg";
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
