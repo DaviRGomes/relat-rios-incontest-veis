@@ -1,3 +1,4 @@
+import MuxPlayer from "@mux/mux-player-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +18,6 @@ const fadeUp = {
 const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   return (
     <section className="relative flex items-center py-16 px-4 overflow-hidden">
-      {/* Background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -73,9 +73,15 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
             animate="visible"
             className="relative aspect-video rounded-xl overflow-hidden glow-gold border border-primary/20"
           >
-            <script src="https://stream.mux.com/TQRtqMWhbvg3V2FbqWzS9wb2R2ktVg4PIBv7pq6csB8.m3u8"></script>
-            {/* Block pop-out button */}
-            <div className="absolute top-0 right-0 w-14 h-14 z-10" />
+            <MuxPlayer
+              playbackId="TQRtqMWhbvg3V2FbqWzS9wb2R2ktVg4PIBv7pq6csB8"
+              streamType="on-demand"
+              autoPlay={false}
+              muted={false}
+              style={{ width: "100%", height: "100%" }}
+              // Desativa download e controles extras
+              nohotkeys
+            />
           </motion.div>
         </div>
       </div>
